@@ -1,0 +1,52 @@
+button {
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+.button--main {
+  min-width: 30px;
+  padding: .5em 2.8em;
+  margin: .5em;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  font-size: 12px;
+  font-family: var(--secondary-font);
+  font-weight: bold;
+  color: var(--light-color);
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.button--main:hover {
+  background: var(--primary-color);
+}
+
+.button--square {
+  padding: .5em;
+}
+
+.button--big {
+  font-size: 16px;
+}
+
+.button--alert {
+  color: var(--alert-color);
+  border-color: var(--alert-color);
+}
+
+.button--alert:hover {
+  color: var(--dark-color);
+  background: var(--alert-color);
+}
+
+.button--warning {
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.button--warning:hover {
+  color: var(--dark-color);
+  background: var(--warning-color);
+}
