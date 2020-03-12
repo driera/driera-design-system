@@ -6,21 +6,13 @@ type ButtonProps = {
   ratio?: string;
   size?: string;
   color?: string;
-  onClick?: any;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 const Button = ({text, ratio, size, color, ...props} : ButtonProps) : JSX.Element => {
-  const ratioClass = ratio === 'square' ? 'button--square' : '';
-  const sizeClass = size === 'big' ? 'button--big' : '';
-  let colorClass = '';
-
-  if (color === 'alert') {
-    colorClass = 'button--alert';
-  }
-  
-  if (color === 'warning') {
-    colorClass = 'button--warning';
-  }
+  const ratioClass = ratio && ratio.length > 0 ? `button--${ratio}` : '';
+  const sizeClass = size && size.length > 0 ? `button--${size}` : '';
+  let colorClass = color && color.length > 0 ? `button--${color}` : '';
   
   const classCollection = `button--main ${sizeClass} ${ratioClass} ${colorClass}`;
 

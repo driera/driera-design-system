@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Can be big 1`] = `
+<div>
+  <button
+    class="button--main button--big  "
+  >
+    Click me!
+  </button>
+</div>
+`;
+
+exports[`Button Can be clicked 1`] = `
+<div>
+  <button
+    class="button--main   "
+  >
+    Click me!
+  </button>
+</div>
+`;
