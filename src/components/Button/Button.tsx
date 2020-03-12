@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components';
 
 type ButtonProps = {
   text: string;
@@ -8,26 +9,28 @@ type ButtonProps = {
   onClick?: any;
 }
 
-const Button = ({text, ratio, size, color, ...props} : ButtonProps) : JSX.Element => {
-  const ratioClass = ratio === 'square' ? 'button--square' : '';
-  const sizeClass = size === 'big' ? 'button--big' : '';
-  let colorClass = '';
+const Button = () : JSX.Element => {
+  const StyledButton = styled(Button)`
+    min-width: 30px;
+    padding: .5em 2.8em;
+    margin: .5em;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    font-size: 12px;
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    color: var(--light-color);
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+  `
 
-  if (color === 'alert') {
-    colorClass = 'button--alert';
-  }
-  
-  if (color === 'warning') {
-    colorClass = 'button--warning';
-  }
-  
-  const classCollection = `button--main ${sizeClass} ${ratioClass} ${colorClass}`;
 
   return (
-    <button className={classCollection} {...props}>
-      {text}
-    </button>
+    <StyledButton>MyButton</StyledButton>
   )
 }
+
+
 
 export default Button;
