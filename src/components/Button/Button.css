@@ -2,6 +2,7 @@ button {
   margin: 0;
   outline: none;
   border: none;
+  color: var(--dark-color);
 }
 
 .button--main {
