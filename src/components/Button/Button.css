@@ -9,7 +9,7 @@ button {
   padding: .5em 2.8em;
   margin: .5em;
   border-radius: 5px;
-  border: 1px solid var(--primary-color);
+  border: 10px solid var(--primary-color);
   font-size: 12px;
   font-family: var(--secondary-font);
   font-weight: bold;
