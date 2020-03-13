@@ -1,28 +1,60 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react';
 import Button from './Button';
+import { action } from '@storybook/addon-actions';
+import { withKnobs, select, text, radios } from '@storybook/addon-knobs';
 import '../../styles/global.css';
 
 storiesOf('Button', module)
-  .add('default', () => <Button text="button text" />)
+  .addDecorator(withKnobs)
+  .add('default', () => <Button text="button text" onClick={action('button action click')}/>)
   .add('square', () => (
       <>
-      <Button text="Regular button" onClick={() => alert('it works!!')} />
-      <Button text="-" ratio="square" />
-      <Button text="+" ratio="square" />
-      <Button text="3D" ratio="square" />
+      <Button text="Regular button" onClick={action('Regular button action click')} />
+      <Button text="-" ratio="square" onClick={action('square button action click')} />
+      <Button text="+" ratio="square" onClick={action('square button action click')} />
+      <Button text="3D" ratio="square" onClick={action('square button action click')} />
       </>
   ))
   .add('Size', () => (
     <>
-    <Button text="Regular button" />
-    <Button text="BIG button" size="big" />
+    <Button text="Regular button" onClick={action('Regular button action click')} />
+    <Button text="BIG button" size="big" onClick={action('BIG button action click')} />
     </>
   ))
   .add('Color', () => (
     <>
-      <Button text="Regular Button" />
-      <Button text="Warning Button" color="warning" />
-      <Button text="Alert Button" color="alert" />
+      <Button text="Regular Button" onClick={action('Regular button action click')} />
+      <Button text="Warning Button" color="warning" onClick={action('Warning button action click')} />
+      <Button text="Alert Button" color="alert" onClick={action('Alert button action click')} />
     </>
+  ))
+  .add('With Knobs', () => (
+    <Button 
+      text={text(
+        'Text',
+        `Knob Button`
+      )} 
+      color={select(
+        'Select color',
+        ['primary', 'warning', 'alert'], 
+        'primary'
+      )}
+      size={radios(
+        'Size', 
+        {
+          Regular: '', 
+          Big: 'big'
+        }, 
+        ''
+      )}
+      ratio={radios(
+        'Ratio', 
+        {
+          Regular: '',
+          Square: 'square'
+        },
+        ''
+      )}
+    />
   ))
