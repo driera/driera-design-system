@@ -3,7 +3,7 @@
 exports[`Button Can be big 1`] = `
 <div>
   <button
-    class="button--main button--big  "
+    class="button--main sz-big  "
   >
     Click me!
   </button>

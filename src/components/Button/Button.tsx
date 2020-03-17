@@ -1,5 +1,5 @@
 import React from 'react'
-import './Button.css';
+import './Button.scss';
 
 type ButtonProps = {
   text: string;
@@ -10,9 +10,9 @@ type ButtonProps = {
 }
 
 const Button = ({text, ratio, size, color, ...props} : ButtonProps) : JSX.Element => {
-  const ratioClass = ratio && ratio.length > 0 ? `button--${ratio}` : '';
-  const sizeClass = size && size.length > 0 ? `button--${size}` : '';
-  let colorClass = color && color.length > 0 ? `button--${color}` : '';
+  const ratioClass = ratio && ratio.length > 0 ? `v-${ratio}` : '';
+  const sizeClass = size && size.length > 0 ? `sz-${size}` : '';
+  let colorClass = color && color.length > 0 ? `st-${color}` : '';
   
   const classCollection = `button--main ${sizeClass} ${ratioClass} ${colorClass}`;
 
