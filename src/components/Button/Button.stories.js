@@ -3,11 +3,10 @@ import { storiesOf } from '@storybook/react';
 import Button from './Button';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select, text, radios } from '@storybook/addon-knobs';
-import '../../styles/global.css';
+import '../../styles/styles.scss';
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('default', () => <Button text="button text" onClick={action('button action click')}/>)
   .add('square', () => (
       <>
       <Button text="Regular button" onClick={action('Regular button action click')} />
@@ -29,7 +28,7 @@ storiesOf('Button', module)
       <Button text="Alert Button" color="alert" onClick={action('Alert button action click')} />
     </>
   ))
-  .add('With Knobs', () => (
+  .add('Customizable', () => (
     <Button 
       text={text(
         'Text',
